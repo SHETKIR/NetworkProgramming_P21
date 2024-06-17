@@ -1,0 +1,10 @@
+﻿  main.cpp
+C:\Users\SHETK\source\repos\SystemProgramming\IPcalculator\IPcalculator\main.cpp(19,3): warning C4477: "sprintf": в строке форматирования "%s" требуется аргумент типа "char *", но вариативный аргумент "1" имеет тип "DWORD"
+C:\Users\SHETK\source\repos\SystemProgramming\IPcalculator\IPcalculator\main.cpp(19,3): warning C4313: sprintf: конфликт "%s" в строке формата с аргументом 1 типа "DWORD"
+C:\Users\SHETK\source\repos\SystemProgramming\IPcalculator\IPcalculator\main.cpp(19,3): warning C4473: "sprintf": передано недостаточно аргументов для строки формата
+  C:\Users\SHETK\source\repos\SystemProgramming\IPcalculator\IPcalculator\main.cpp(19,3):
+  заполнители и их параметры ожидают переменное число аргументов в количестве 5, но было предоставлено 4
+  C:\Users\SHETK\source\repos\SystemProgramming\IPcalculator\IPcalculator\main.cpp(19,3):
+  отсутствующий вариативный аргумент "5" требуется для строки форматирования "%i"
+  
+  IPcalculator.vcxproj -> C:\Users\SHETK\source\repos\SystemProgramming\IPcalculator\x64\Debug\IPcalculator.exe
