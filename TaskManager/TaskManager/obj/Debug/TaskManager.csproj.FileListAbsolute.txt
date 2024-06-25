@@ -1,0 +1,11 @@
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\obj\Debug\TaskManager.csproj.AssemblyReference.cache
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\obj\Debug\TaskManager.CommandLine.resources
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\obj\Debug\TaskManager.MainForm.resources
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\obj\Debug\TaskManager.Properties.Resources.resources
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\obj\Debug\TaskManager.csproj.GenerateResource.cache
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\obj\Debug\TaskManager.csproj.CoreCompileInputs.cache
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\bin\Debug\TaskManager.exe.config
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\bin\Debug\TaskManager.exe
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\bin\Debug\TaskManager.pdb
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\obj\Debug\TaskManager.exe
+C:\Users\SHETK\Desktop\TaskManager\TaskManager\obj\Debug\TaskManager.pdb
