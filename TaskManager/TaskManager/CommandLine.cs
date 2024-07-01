@@ -34,7 +34,7 @@ namespace TaskManager
                 string item = sr.ReadLine();
                 comboBoxFilename.Items.Add(item);
             }
-
+            comboBoxFilename.Text = comboBoxFilename.Items.ToString();
             sr.Close();
         }
 
@@ -60,15 +60,33 @@ namespace TaskManager
 
         private void comboBoxFilename_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                buttonOK_Click(sender, e);
-            }
+
         }
 
         private void CommandLine_FormClosing(object sender, FormClosingEventArgs e)
         {
             comboBoxFilename.Focus();
+        }
+
+        private void comboBoxFilename_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter) buttonOK_Click(sender, e);
+        }
+
+        private void CommandLine_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Escape) Close();
+        }
+
+        private void buttonBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Executable files (*.exe)|*.exe|All files (*.*)|*.*";
+            DialogResult result = open.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                comboBoxFilename.Text = open.FileName;
+            }
         }
 
         private void CommandLine_Load(object sender, EventArgs e)

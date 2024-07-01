@@ -53,6 +53,7 @@
     <Compile Include="CommandLine.Designer.cs">
       <DependentUpon>CommandLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comparer.cs" />
     <Compile Include="ListViewSmooth.cs">
       <SubType>Component</SubType>
     </Compile>

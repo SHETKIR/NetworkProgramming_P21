@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Collections;
 
 namespace TaskManager
 {
@@ -44,6 +45,7 @@ namespace TaskManager
         }
         void LoadProcesses()
         {
+
             d_processes = Process.GetProcesses().ToDictionary(item => item.Id, item => item);
             foreach (KeyValuePair<int, Process> i in d_processes)
             {
@@ -57,7 +59,6 @@ namespace TaskManager
             {
                 if (!this.d_processes.ContainsKey(i.Key))
                 {
-
                     AddProcessToListView(i.Value);
                 }
             }
@@ -112,17 +113,42 @@ namespace TaskManager
             sw.Close();
         }
 
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            d_processes[Convert.ToInt32(listViewProcesses.SelectedItems[0].Text)].Kill();
+        }
+
+        private void listViewProcesses_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            listViewProcesses.ListViewItemSorter = GetListViewSorter(e.Column);
+            listViewProcesses.Sort();
+        }
+        Comparer GetListViewSorter(int index)
+        {
+            Comparer comparer = (Comparer)listViewProcesses.ListViewItemSorter;
+            if (comparer == null) comparer = new Comparer();
+
+            comparer.Index = index;
+            string columnName = listViewProcesses.Columns[index].Text;
+            switch (columnName)
+            {
+                case "PID":
+                    comparer.Type = Comparer.ValueType.Integer;
+                    break;
+                case "Name":
+                    comparer.Type = Comparer.ValueType.String;
+                    break;
+                case "Working set":
+                case "Peak working set":
+                    comparer.Type = Comparer.ValueType.Memory;
+                    break;
+            }
+
+            comparer.Direction = comparer.Direction == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+            return comparer;
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_Load_2(object sender, EventArgs e)
         {
 
         }

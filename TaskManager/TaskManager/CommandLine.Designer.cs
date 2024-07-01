@@ -65,6 +65,7 @@
             this.buttonBrowse.TabIndex = 2;
             this.buttonBrowse.Text = "Browse";
             this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
             // 
             // comboBoxFilename
             // 
@@ -74,6 +75,7 @@
             this.comboBoxFilename.Name = "comboBoxFilename";
             this.comboBoxFilename.Size = new System.Drawing.Size(254, 21);
             this.comboBoxFilename.TabIndex = 0;
+            this.comboBoxFilename.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxFilename_KeyDown);
             this.comboBoxFilename.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxFilename_KeyPress);
             // 
             // pictureBox
@@ -98,9 +100,11 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
             this.Name = "CommandLine";
             this.Text = "Run";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CommandLine_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CommandLine_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
